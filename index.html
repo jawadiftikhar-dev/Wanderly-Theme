@@ -1,0 +1,2418 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Wanderly — a luxury travel itinerary planner crafting bespoke journeys across the world's most extraordinary destinations. AI-assisted, human-curated." />
+  <meta name="keywords"
+    content="travel itinerary, luxury travel, bespoke journeys, travel planner, curated trips, concierge travel" />
+  <meta name="theme-color" content="#0E3B2E" />
+  <meta property="og:title" content="Wanderly — Bespoke Travel Itineraries" />
+  <meta property="og:description" content="Craft your next journey with AI-assisted, human-curated itineraries." />
+  <meta property="og:type" content="website" />
+  <title>Wanderly — Bespoke Travel Itineraries, Thoughtfully Crafted</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- STYLES .CSS -->
+   <link rel="stylesheet" href="./styles/design-system.css">
+   <link rel="stylesheet" href="./styles/global.css">
+
+</head>
+
+<body>
+  <!-- ============ CURSOR ============ -->
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- ============ 1. ANNOUNCEMENT BAR ============ -->
+  <div class="bg-[color:var(--c-forest)] text-[color:var(--c-ivory)] text-[13px]">
+    <div class="container-x flex items-center justify-between gap-4 py-2">
+      <p class="flex items-center gap-2 truncate">
+        <span class="dot inline-block w-1.5 h-1.5 rounded-full bg-[color:var(--c-terra)] animate-pulse"></span>
+        Winter 2026 collection — 14 new itineraries across Patagonia &amp;
+        Japan.
+      </p>
+      <a href="#newsletter" class="hidden md:inline-flex items-center gap-1 ulink">Claim your early-access pass <span
+          aria-hidden="true">→</span></a>
+      <button aria-label="Close announcement" class="md:hidden text-lg leading-none opacity-70 hover:opacity-100">
+        ×
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ 2. NAVIGATION ============ -->
+  <header id="nav" class="sticky top-0 z-40 transition-all duration-300">
+    <nav class="container-x flex items-center justify-between py-5" aria-label="Main">
+      <a href="#top" class="flex items-center gap-2" aria-label="Wanderly home">
+        <svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="#0E3B2E" stroke-width="1.5" />
+          <path d="M8 20 Q20 6 32 20 Q20 34 8 20Z" stroke="#0E3B2E" stroke-width="1.5" fill="none" />
+          <circle cx="20" cy="20" r="2.5" fill="#C65D3B" />
+        </svg>
+        <span class="font-display text-[22px] leading-none">Wanderly</span>
+      </a>
+      <ul class="hidden lg:flex items-center gap-8 text-[15px]">
+        <li><a href="#planner" class="ulink">Planner</a></li>
+        <li><a href="#itineraries" class="ulink">Itineraries</a></li>
+        <li><a href="#experiences" class="ulink">Experiences</a></li>
+        <li><a href="#experts" class="ulink">Experts</a></li>
+        <li><a href="#journal" class="ulink">Journal</a></li>
+        <li><a href="#pricing" class="ulink">Pricing</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="#login" class="hidden md:inline-flex text-[15px] ulink">Sign in</a>
+        <a href="#planner" class="btn-primary text-[14px]">
+          Plan a trip
+          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M7 17L17 7M17 7H9M17 7V15" />
+          </svg>
+        </a>
+        <button id="menuBtn" class="lg:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+          <span class="block w-6 h-[2px] bg-[color:var(--c-ink)] mb-1.5"></span>
+          <span class="block w-6 h-[2px] bg-[color:var(--c-ink)] mb-1.5"></span>
+          <span class="block w-4 h-[2px] bg-[color:var(--c-ink)]"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- mobile menu -->
+    <div id="menu" class="lg:hidden hidden border-t border-[color:var(--c-line)] bg-[color:var(--c-ivory)]">
+      <ul class="container-x py-6 space-y-4 text-lg font-display">
+        <li><a href="#planner">Planner</a></li>
+        <li><a href="#itineraries">Itineraries</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#experts">Experts</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ 3. HERO ============ -->
+    <section class="relative overflow-hidden pt-10 pb-24 md:pt-16 md:pb-32">
+      <!-- decorative compass -->
+      <div class="absolute -top-20 -right-20 w-[420px] h-[420px] opacity-[0.07] compass pointer-events-none"
+        aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none" stroke="#0E3B2E" stroke-width="1">
+          <circle cx="200" cy="200" r="190" />
+          <circle cx="200" cy="200" r="150" />
+          <circle cx="200" cy="200" r="110" />
+          <path d="M200 10v380M10 200h380M50 50l300 300M350 50L50 350" />
+          <polygon points="200,30 210,200 200,370 190,200" fill="#0E3B2E" />
+        </svg>
+      </div>
+
+      <div class="container-x grid lg:grid-cols-12 gap-12 items-end">
+        <div class="lg:col-span-7">
+          <p class="ornament mb-7 reveal">
+            <span>Est. 2016 — Bespoke travel, reimagined</span>
+          </p>
+          <h1 class="font-display text-[44px] leading-[1.02] sm:text-6xl md:text-7xl lg:text-[88px] balance reveal">
+            Itineraries crafted like
+            <em class="not-italic italic font-light text-[color:var(--c-terra)]">love letters</em>
+            to the world.
+          </h1>
+          <p class="mt-7 max-w-xl text-[color:var(--c-mute)] text-lg leading-relaxed reveal">
+            Wanderly pairs seasoned travel editors with an AI concierge to
+            design journeys that feel effortless, surprising, and entirely
+            yours — from a 72-hour Kyoto pilgrimage to a 21-day Patagonia
+            expedition.
+          </p>
+
+          <!-- Trip composer -->
+          <form
+            class="mt-10 bg-white border border-[color:var(--c-line)] rounded-[var(--r-xl)] p-3 md:p-4 shadow-[var(--shadow-md)] reveal"
+            onsubmit="
+                event.preventDefault();
+                document
+                  .getElementById('planner')
+                  .scrollIntoView({ behavior: 'smooth' });
+              ">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-0 md:divide-x divide-[color:var(--c-line)]">
+              <label class="p-3 md:p-4 block cursor-pointer">
+                <span class="block text-[11px] uppercase tracking-widest text-[color:var(--c-mute)] mb-1">Where
+                  to</span>
+                <input type="text" placeholder="Any destination"
+                  class="w-full bg-transparent outline-none font-display text-md placeholder:text-[color:var(--c-ink)]" />
+              </label>
+              <label class="p-3 md:p-4 block cursor-pointer">
+                <span class="block text-[11px] uppercase tracking-widest text-[color:var(--c-mute)] mb-1">When</span>
+                <input type="text" placeholder="Select dates" onfocus="this.type = 'date'"
+                  onblur="if (!this.value) this.type = 'text';"
+                  class="w-full bg-transparent outline-none font-display text-md placeholder:text-[color:var(--c-ink)]" />
+              </label>
+              <label class="p-3 md:p-4 block cursor-pointer">
+                <span
+                  class="block text-[11px] uppercase tracking-widest text-[color:var(--c-mute)] mb-1">Travelers</span>
+                <select class="w-full bg-transparent outline-none font-display text-md appearance-none">
+                  <option>2 adults</option>
+                  <option>Solo</option>
+                  <option>Couple</option>
+                  <option>Family</option>
+                  <option>Group</option>
+                </select>
+              </label>
+              <label class="p-3 md:p-4 block cursor-pointer">
+                <span class="block text-[11px] uppercase tracking-widest text-[color:var(--c-mute)] mb-1">Mood</span>
+                <select class="w-full bg-transparent outline-none font-display text-md appearance-none">
+                  <option>Slow &amp; cultural</option>
+                  <option>Adventure</option>
+                  <option>Romance</option>
+                  <option>Wellness</option>
+                  <option>Culinary</option>
+                </select>
+              </label>
+            </div>
+            <button type="submit" class="btn-primary justify-center md:rounded-[18px] mt-5">
+              Design my trip
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M7 17L17 7M17 7H9M17 7V15" />
+              </svg>
+            </button>
+          </form>
+
+          <div class="mt-8 flex flex-wrap items-center gap-6 text-sm text-[color:var(--c-mute)] reveal">
+            <div class="flex -space-x-2">
+              <div
+                class="w-8 h-8 rounded-full bg-[color:var(--c-sage)] border-2 border-[color:var(--c-ivory)] grid place-items-center text-xs text-white">
+                A
+              </div>
+              <div
+                class="w-8 h-8 rounded-full bg-[color:var(--c-terra)] border-2 border-[color:var(--c-ivory)] grid place-items-center text-xs text-white">
+                M
+              </div>
+              <div
+                class="w-8 h-8 rounded-full bg-[color:var(--c-gold)] border-2 border-[color:var(--c-ivory)] grid place-items-center text-xs text-white">
+                J
+              </div>
+              <div
+                class="w-8 h-8 rounded-full bg-[color:var(--c-forest)] border-2 border-[color:var(--c-ivory)] grid place-items-center text-xs text-white">
+                +
+              </div>
+            </div>
+            <p>
+              Loved by
+              <strong class="text-[color:var(--c-ink)]">48,000+</strong>
+              travelers across 142 countries
+            </p>
+            <div class="flex items-center gap-1" aria-label="Rated 4.9 out of 5">
+              <span class="text-[color:var(--c-gold)]">★★★★★</span><span class="ml-1">4.9 / 5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero visual stack -->
+        <div class="lg:col-span-5 relative reveal">
+          <div class="relative aspect-[4/5] rounded-[var(--r-xl)] overflow-hidden zoom shadow-[var(--shadow-lg)]">
+            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80"
+              alt="A serene tropical coastline with palms swaying over white sand" loading="eager" />
+          </div>
+          <div
+            class="absolute -left-6 -bottom-6 w-48 h-60 rounded-[var(--r-lg)] overflow-hidden zoom shadow-[var(--shadow-lg)] hidden md:block border-4 border-[color:var(--c-ivory)]">
+            <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=600&q=80"
+              alt="Ancient temple in Kyoto at dawn" loading="lazy" class="h-60" />
+          </div>
+          <div
+            class="absolute -right-4 top-8 bg-white rounded-[var(--r-md)] p-4 shadow-[var(--shadow-md)] border border-[color:var(--c-line)] hidden md:block max-w-[220px]">
+            <p class="text-[11px] uppercase tracking-widest text-[color:var(--c-mute)] mb-1">
+              Today's pick
+            </p>
+            <p class="font-display text-lg leading-tight">
+              12 days along the Amalfi coast
+            </p>
+            <div class="mt-3 flex items-center gap-2 text-xs text-[color:var(--c-mute)]">
+              <span class="chip"><span class="dot"></span>AI + human</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. TRUST / PRESS MARQUEE ============ -->
+    <section class="py-10 border-y border-[color:var(--c-line)] bg-[color:var(--c-paper)] overflow-hidden">
+      <div class="container-x mb-4 flex items-center justify-between gap-4">
+        <p class="text-xs uppercase tracking-[.25em] text-[color:var(--c-mute)]">
+          As featured in
+        </p>
+        <p class="text-xs uppercase tracking-[.25em] text-[color:var(--c-mute)] hidden md:block">
+          Trusted by Condé Nast, AFAR, NatGeo &amp; more
+        </p>
+      </div>
+      <div class="overflow-hidden relative" aria-hidden="true">
+        <div class="marquee text-[color:var(--c-forest)] font-display text-2xl md:text-3xl opacity-80">
+          <span>Condé Nast Traveler</span><span>·</span><span>AFAR</span><span>·</span><span>National
+            Geographic</span><span>·</span><span>Monocle</span><span>·</span><span>The New York
+            Times</span><span>·</span><span>Vogue</span><span>·</span><span>Financial Times — How to Spend
+            It</span><span>·</span>
+          <span>Condé Nast Traveler</span><span>·</span><span>AFAR</span><span>·</span><span>National
+            Geographic</span><span>·</span><span>Monocle</span><span>·</span><span>The New York
+            Times</span><span>·</span><span>Vogue</span><span>·</span><span>Financial Times — How to Spend
+            It</span><span>·</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. HOW IT WORKS ============ -->
+    <section class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="max-w-3xl reveal">
+          <p class="ornament mb-5"><span>The Wanderly method</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Four quiet steps. One remarkable journey.
+          </h2>
+        </div>
+
+        <ol class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8 reveal-stagger" id="steps">
+          <li class="relative">
+            <div class="font-display text-[color:var(--c-terra)] text-2xl mb-4">
+              01
+            </div>
+            <h3 class="font-display text-2xl mb-3">Tell us a little</h3>
+            <p class="text-[color:var(--c-mute)] leading-relaxed">
+              A five-minute questionnaire — your tempo, curiosities,
+              allergies, and the small rituals that make you feel at home.
+            </p>
+          </li>
+          <li class="relative">
+            <div class="font-display text-[color:var(--c-terra)] text-2xl mb-4">
+              02
+            </div>
+            <h3 class="font-display text-2xl mb-3">We draft three routes</h3>
+            <p class="text-[color:var(--c-mute)] leading-relaxed">
+              Your editor and our AI collaborator sketch three distinct
+              itineraries — from serene to spirited — within 48 hours.
+            </p>
+          </li>
+          <li class="relative">
+            <div class="font-display text-[color:var(--c-terra)] text-2xl mb-4">
+              03
+            </div>
+            <h3 class="font-display text-2xl mb-3">Refine, together</h3>
+            <p class="text-[color:var(--c-mute)] leading-relaxed">
+              Tweak a lunch, swap a hotel, add a private guide. Our concierge
+              responds in minutes, not days.
+            </p>
+          </li>
+          <li class="relative">
+            <div class="font-display text-[color:var(--c-terra)] text-2xl mb-4">
+              04
+            </div>
+            <h3 class="font-display text-2xl mb-3">Go, with us on call</h3>
+            <p class="text-[color:var(--c-mute)] leading-relaxed">
+              A beautifully bound trip book in your inbox, 24/7 support on the
+              road, and quiet surprises along the way.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 5b. NEW SECTION: ANATOMY OF A DAY (EXPLANATORY VALUE PROPOSITION) ============ -->
+    <section class="py-24 md:py-32 bg-[color:var(--c-paper)] border-y border-[color:var(--c-line)]">
+      <div class="container-x">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 reveal">
+            <p class="ornament mb-5"><span>The Human + AI Synergy</span></p>
+            <h2 class="font-display text-4xl md:text-5xl leading-tight balance">
+              The anatomy of a Wanderly day.
+            </h2>
+            <p class="mt-6 text-[color:var(--c-mute)] text-lg leading-relaxed">
+              Algorithm alone breeds sterile, copy-paste routes. Traditional
+              agents are slow and opaque. Wanderly fuses the speed and
+              logistical brilliance of our AI model with the deep cultural
+              context of local, on-the-ground editors.
+            </p>
+
+            <div class="mt-8 space-y-6">
+              <div class="p-5 bg-white/60 rounded-xl border border-[color:var(--c-line)] flex gap-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-[color:var(--c-forest)]/10 text-[color:var(--c-forest)] flex items-center justify-center font-display font-bold shrink-0">AI</span>
+                <div>
+                  <h4 class="font-display text-lg font-bold">
+                    What the technology solves
+                  </h4>
+                  <p class="text-sm text-[color:var(--c-mute)] mt-1">
+                    Calculates optimal driving routes, cross-checks transit
+                    tables, and verifies live hotel availability to secure
+                    rates instantly.
+                  </p>
+                </div>
+              </div>
+              <div class="p-5 bg-white/60 rounded-xl border border-[color:var(--c-line)] flex gap-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-[color:var(--c-terra)]/10 text-[color:var(--c-terra)] flex items-center justify-center font-display font-bold shrink-0">HE</span>
+                <div>
+                  <h4 class="font-display text-lg font-bold">
+                    What the human editor provides
+                  </h4>
+                  <p class="text-sm text-[color:var(--c-mute)] mt-1">
+                    Calls the chef directly to skip a six-month waitlist, adds
+                    specific architectural detours, and formats pacing for
+                    zero fatigue.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 reveal">
+            <!-- Visual Interactive Teardown Card -->
+            <div
+              class="bg-white border border-[color:var(--c-line)] rounded-[var(--r-xl)] p-6 md:p-8 shadow-[var(--shadow-lg)] relative">
+              <div class="flex items-center justify-between pb-6 border-b border-[color:var(--c-line)]">
+                <div>
+                  <span class="chip mb-2"><span class="dot"></span>Teardown Analysis</span>
+                  <h3 class="font-display text-2xl">Kyoto — Day 4</h3>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs uppercase tracking-wider text-[color:var(--c-mute)]">Tempo</span>
+                  <p class="font-semibold text-sm text-[color:var(--c-forest)]">
+                    Quiet &amp; Intimate
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="mt-6 space-y-6 relative before:absolute before:left-[17px] before:top-4 before:bottom-4 before:w-[1px] before:bg-[color:var(--c-line)]">
+                <!-- Event 1 -->
+                <div class="flex gap-6 items-start relative">
+                  <div
+                    class="w-9 h-9 rounded-full bg-[color:var(--c-forest)] text-white text-xs flex items-center justify-center font-semibold shrink-0 z-10 shadow-sm">
+                    07:00
+                  </div>
+                  <div>
+                    <p class="font-display text-lg">
+                      Sunrise over Kiyomizu-dera
+                    </p>
+                    <p class="text-sm text-[color:var(--c-mute)] mt-1">
+                      Beat the tour coaches by arriving at dawn. AI analyzed
+                      traffic offsets to schedule a departure from your hotel
+                      at precisely 06:40.
+                    </p>
+                    <span
+                      class="inline-block mt-2 text-xs font-semibold px-2 py-0.5 bg-[color:var(--c-forest)]/10 text-[color:var(--c-forest)] rounded">AI
+                      Optimized Route</span>
+                  </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="flex gap-6 items-start relative">
+                  <div
+                    class="w-9 h-9 rounded-full bg-[color:var(--c-terra)] text-white text-xs flex items-center justify-center font-semibold shrink-0 z-10 shadow-sm">
+                    11:30
+                  </div>
+                  <div>
+                    <p class="font-display text-lg">
+                      Private Moss Garden Meditation
+                    </p>
+                    <p class="text-sm text-[color:var(--c-mute)] mt-1">
+                      A silent, off-public temple reserved exclusively for our
+                      guests via our editor Sam's personal connection with the
+                      head priest.
+                    </p>
+                    <span
+                      class="inline-block mt-2 text-xs font-semibold px-2 py-0.5 bg-[color:var(--c-terra)]/10 text-[color:var(--c-terra)] rounded">Editor
+                      Personal Connection</span>
+                  </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="flex gap-6 items-start relative">
+                  <div
+                    class="w-9 h-9 rounded-full bg-[color:var(--c-forest)] text-white text-xs flex items-center justify-center font-semibold shrink-0 z-10 shadow-sm">
+                    18:30
+                  </div>
+                  <div>
+                    <p class="font-display text-lg">
+                      Hidden 6-Seat Counter Dinner
+                    </p>
+                    <p class="text-sm text-[color:var(--c-mute)] mt-1">
+                      Skip the commercial spots. Hiroshi booked you a counter
+                      stool at a third-generation tempura house hidden inside
+                      Gion.
+                    </p>
+                    <div class="mt-2 flex gap-2">
+                      <span
+                        class="text-xs font-semibold px-2 py-0.5 bg-[color:var(--c-forest)]/10 text-[color:var(--c-forest)] rounded">AI
+                        Automated Booking</span>
+                      <span
+                        class="text-xs font-semibold px-2 py-0.5 bg-[color:var(--c-terra)]/10 text-[color:var(--c-terra)] rounded">Editor
+                        Vetted</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTERACTIVE SLIDER SECTION: AI vs HUMAN ============ -->
+    <section id="co-creation" class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 reveal">
+            <p class="ornament mb-5"><span>The Co-Creation Standard</span></p>
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+              Where artificial intelligence meets human discernment.
+            </h2>
+            <p class="mt-6 text-[color:var(--c-mute)] text-base leading-relaxed">
+              An automated itinerary generator can map logistics, but it
+              cannot sit down with a restaurant owner or spot a hidden garden
+              gate.
+            </p>
+            <p class="mt-4 text-[color:var(--c-mute)] text-base leading-relaxed">
+              Slide the handle on the map preview to see how our human editors
+              elevate a standard algorithmic plan into an immersive local
+              story.
+            </p>
+            <div class="mt-8 flex gap-6">
+              <div>
+                <p class="font-display text-3xl text-[color:var(--c-terra)]">
+                  AI
+                </p>
+                <p class="text-xs text-[color:var(--c-mute)]">
+                  Logistical baseline
+                </p>
+              </div>
+              <div class="border-l border-[color:var(--c-line)] pl-6">
+                <p class="font-display text-3xl text-[color:var(--c-forest)]">
+                  Human Editor
+                </p>
+                <p class="text-xs text-[color:var(--c-mute)]">
+                  Sensory detail &amp; access
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Slide Panel Container -->
+          <!-- Interactive Slide Panel Container -->
+          <div class="lg:col-span-7 reveal">
+            <div class="split-container select-none">
+
+              <!-- Behind Panel: AI Draft (Grey/Standard) -->
+              <div class="split-panel panel-ai">
+                <div class="p-8 md:p-12 h-full flex flex-col justify-between w-[640px] md:w-[750px]">
+                  <div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs uppercase tracking-widest font-mono text-neutral-500">System Draft
+                        #0381</span>
+                      <span class="text-xs font-mono px-2 py-0.5 border border-neutral-400 rounded mr-20">AI
+                        Baseline</span>
+                    </div>
+                    <h4 class="font-display text-3xl mt-8 text-neutral-800">Day 4: Kyoto Imperial Outing</h4>
+                    <p class="text-sm mt-4 text-neutral-600 max-w-md leading-relaxed">
+                      10:00 AM — Arrive at Kyoto Imperial Palace. Standard walking tour of the gardens. <br><br>
+                      12:30 PM — Lunch at a high-rated noodle shop in downtown Kamigyo (suggested by web
+                      algorithm).<br><br>
+                      03:00 PM — Taxi transfer to Arashiyama district. Crowded paths; expected wait times: 45 minutes.
+                    </p>
+                  </div>
+                  <div class="text-xs font-mono text-neutral-400">
+                    Calculated via transit algorithms and public ratings indexes.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sliding Panel: Human Vetted (Forest Green/Warm Accent) -->
+              <div class="split-panel panel-human" id="humanPanel">
+                <div class="p-8 md:p-12 h-full flex flex-col justify-between w-[640px] md:w-[750px]">
+                  <div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs uppercase tracking-widest text-[color:var(--c-terra)] font-semibold">Kyoto,
+                        Curated by Hiroshi</span>
+                      <span
+                        class="text-xs font-semibold px-2 py-0.5 bg-[color:var(--c-terra)] text-white rounded mr-20">Editor
+                        Vetted</span>
+                    </div>
+                    <h4 class="font-display text-3xl mt-8 text-[color:var(--c-ivory)]">Day 4: Quiet Moss &amp; Early
+                      Light</h4>
+                    <p class="text-sm mt-4 text-[color:var(--c-ivory)] opacity-90 leading-relaxed max-w-md">
+                      07:30 AM — Guided walk through the inner bamboo paths before public entry. <br><br>
+                      11:30 AM — Private lunch at a private villa garden, reserved directly with the resident
+                      chef.<br><br>
+                      02:30 PM — Studio visit with a third-generation indigo textile artisan in a quiet residential
+                      quarter.
+                    </p>
+                  </div>
+                  <div class="text-xs text-[color:var(--c-sage)] font-semibold">
+                    Adjusted for route privacy, optimal light, and local artist relationships.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Handle Control -->
+              <div class="split-handle" id="splitHandle"></div>
+              <div class="split-button" id="splitButton" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M8 7l-5 5 5 5M16 7l5 5-5 5" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. AI ITINERARY BUILDER PREVIEW ============ -->
+    <section id="planner" class="py-24 md:py-32 bg-[color:var(--c-paper)] border-y border-[color:var(--c-line)]">
+      <div class="container-x grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <p class="ornament mb-5"><span>Meet your co-pilot</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            An AI that plans like a <em class="italic">local</em>, edits like
+            a critic.
+          </h2>
+          <p class="mt-6 text-[color:var(--c-mute)] text-lg leading-relaxed max-w-lg">
+            Trained on 14 years of editor notes, 320,000 traveler reviews, and
+            real-time availability from 2,100 boutique properties. It drafts —
+            your human editor refines.
+          </p>
+
+          <ul class="mt-8 space-y-4 text-[15px]" role="list">
+            <li class="flex gap-4">
+              <span
+                class="mt-2 w-6 h-6 rounded-full bg-[color:var(--c-forest)]/10 grid place-items-center text-[color:var(--c-forest)] text-xs">✓</span>
+              <div>
+                <strong>Hyper-personalized pacing.</strong>
+                <span class="text-[color:var(--c-mute)]">Never too rushed, never idle.</span>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span
+                class="mt-2 w-6 h-6 rounded-full bg-[color:var(--c-forest)]/10 grid place-items-center text-[color:var(--c-forest)] text-xs">✓</span>
+              <div>
+                <strong>Reservable in one tap.</strong>
+                <span class="text-[color:var(--c-mute)]">Hotels, tables, trains — all confirmed.</span>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span
+                class="mt-2 w-6 h-6 rounded-full bg-[color:var(--c-forest)]/10 grid place-items-center text-[color:var(--c-forest)] text-xs">✓</span>
+              <div>
+                <strong>Transparent budget.</strong>
+                <span class="text-[color:var(--c-mute)]">Adjust the dial, we rebuild the trip.</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="#pricing" class="btn-primary">Start a free draft
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M7 17L17 7M17 7H9M17 7V15" />
+              </svg>
+            </a>
+            <a href="#how" class="btn-ghost">Watch 90-second demo</a>
+          </div>
+        </div>
+
+        <!-- Mock builder UI (Dynamic & Interactive Sandbox Card) -->
+        <div class="reveal relative">
+          <div class="bg-white border border-[color:var(--c-line)] rounded-[var(--r-xl)] p-5 shadow-[var(--shadow-lg)]"
+            id="livePreviewBox">
+            <div class="flex items-center gap-1.5 mb-4">
+              <span class="w-2.5 h-2.5 rounded-full bg-[color:var(--c-terra)]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[color:var(--c-gold)]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[color:var(--c-sage)]"></span>
+              <span class="ml-auto text-xs text-[color:var(--c-mute)]" id="liveUrl">wanderly.app/drafts/kyoto</span>
+            </div>
+
+            <div class="rounded-[var(--r-md)] overflow-hidden aspect-video relative mb-4">
+              <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80"
+                alt="Kyoto bamboo grove at dawn" class="absolute inset-0 w-full h-full object-cover" id="liveImg" />
+              <div class="absolute bottom-3 left-3 bg-white/95 rounded-lg px-3 py-2 text-xs">
+                <p class="font-medium" id="liveDayTitle">
+                  Day 3 · Arashiyama, 06:40
+                </p>
+                <p class="text-[color:var(--c-mute)]" id="liveDaySub">
+                  Private bamboo grove walk before crowds
+                </p>
+              </div>
+            </div>
+
+            <!-- Sandbox Live Option Selectors -->
+            <div class="mb-4 space-y-3 bg-[color:var(--c-paper)] p-3 rounded-xl border border-[color:var(--c-line)]">
+              <div class="flex flex-col gap-1">
+                <span
+                  class="text-[10px] uppercase tracking-wider text-[color:var(--c-mute)] font-semibold">Destination</span>
+                <div class="flex gap-1.5" id="sandboxDest">
+                  <button data-val="Kyoto"
+                    class="px-3 py-1.5 text-xs bg-[color:var(--c-forest)] text-white rounded-lg font-medium transition duration-200">
+                    Kyoto
+                  </button>
+                  <button data-val="Patagonia"
+                    class="px-3 py-1.5 text-xs bg-white border border-[color:var(--c-line)] text-[color:var(--c-ink)] rounded-lg hover:bg-[color:var(--c-cream)] transition duration-200">
+                    Patagonia
+                  </button>
+                  <button data-val="Amalfi"
+                    class="px-3 py-1.5 text-xs bg-white border border-[color:var(--c-line)] text-[color:var(--c-ink)] rounded-lg hover:bg-[color:var(--c-cream)] transition duration-200">
+                    Amalfi
+                  </button>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="flex flex-col gap-1">
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-[color:var(--c-mute)] font-semibold">Pace</span>
+                  <div class="flex gap-1" id="sandboxPace">
+                    <button data-val="Quiet"
+                      class="px-2.5 py-1 text-xs bg-[color:var(--c-forest)] text-white rounded-lg font-medium transition duration-200">
+                      Quiet
+                    </button>
+                    <button data-val="Active"
+                      class="px-2.5 py-1 text-xs bg-white border border-[color:var(--c-line)] text-[color:var(--c-ink)] rounded-lg hover:bg-[color:var(--c-cream)] transition duration-200">
+                      Active
+                    </button>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-[color:var(--c-mute)] font-semibold">Focus</span>
+                  <div class="flex gap-1" id="sandboxVibe">
+                    <button data-val="Cultural"
+                      class="px-2.5 py-1 text-xs bg-[color:var(--c-forest)] text-white rounded-lg font-medium transition duration-200">
+                      Cultural
+                    </button>
+                    <button data-val="Culinary"
+                      class="px-2.5 py-1 text-xs bg-white border border-[color:var(--c-line)] text-[color:var(--c-ink)] rounded-lg hover:bg-[color:var(--c-cream)] transition duration-200">
+                      Culinary
+                    </button>
+                    <button data-val="Adventure"
+                      class="px-2.5 py-1 text-xs bg-white border border-[color:var(--c-line)] text-[color:var(--c-ink)] rounded-lg hover:bg-[color:var(--c-cream)] transition duration-200">
+                      Adventure
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2" id="liveDayList">
+              <!-- Dynamically rendered via JS Sandbox Engine -->
+            </div>
+
+            <div class="mt-4 flex items-center justify-between pt-4 border-t border-[color:var(--c-line)]">
+              <div>
+                <p class="text-xs uppercase tracking-widest text-[color:var(--c-mute)]">
+                  Total estimate
+                </p>
+                <p class="font-display text-2xl" id="livePrice">
+                  $5,240
+                  <span class="text-sm text-[color:var(--c-mute)] font-sans">· 2 travelers</span>
+                </p>
+              </div>
+              <button class="btn-primary text-sm" id="btnLiveRegen">
+                Regenerate
+              </button>
+            </div>
+          </div>
+          <!-- floating badge -->
+          <div
+            class="absolute -top-6 -right-4 bg-[color:var(--c-forest)] text-white rounded-2xl px-4 py-3 shadow-[var(--shadow-md)] hidden md:block">
+            <p class="text-[11px] uppercase tracking-widest opacity-80">
+              Draft in
+            </p>
+            <p class="font-display text-2xl">48h</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEW SECTION: CONSCIOUS LUXURY & SUSTAINABLE STANDARDS ============ -->
+    <section id="sustainability" class="py-24 md:py-32">
+      <div class="container-x grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 order-2 lg:order-1 reveal relative">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="zoom rounded-[var(--r-md)] overflow-hidden aspect-[4/5] shadow-sm">
+              <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80"
+                alt="Lush forest canopy with sunlight filtering through" class="w-full h-full object-cover" />
+            </div>
+            <div class="zoom rounded-[var(--r-md)] overflow-hidden aspect-[4/5] mt-8 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
+                alt="Locally harvested organic grapes" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <!-- floating certified badge -->
+          <div
+            class="absolute -bottom-6 right-6 bg-white border border-[color:var(--c-line)] p-4 rounded-xl shadow-md flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-[color:var(--c-forest)] text-white flex items-center justify-center font-bold text-sm">
+              B
+            </div>
+            <div>
+              <p class="font-display font-semibold text-sm">
+                Certified B-Corp
+              </p>
+              <p class="text-[10px] text-[color:var(--c-mute)]">
+                Meeting high environmental standards
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 reveal">
+          <p class="ornament mb-5"><span>Conscious Luxury</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Preserving the places we write about.
+          </h2>
+          <p class="mt-6 text-[color:var(--c-mute)] text-lg leading-relaxed">
+            Bespoke travel should leave a positive trace. As a certified
+            B-Corporation, we manage carbon offsets for every client journey
+            and reinvest 1% of total itinerary commissions directly into
+            heritage preservation.
+          </p>
+
+          <ul class="mt-8 space-y-4 text-[15px]" role="list">
+            <li class="flex gap-4">
+              <span
+                class="mt-1 w-5 h-5 rounded-full bg-[color:var(--c-sage)]/25 text-[color:var(--c-forest)] flex items-center justify-center text-xs font-bold">✓</span>
+              <div>
+                <strong>100% Carbon-Mitigated Operations.</strong>
+                <span class="text-[color:var(--c-mute)]">We coordinate offset contributions for transit, land
+                  travel, and hotel energy.</span>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span
+                class="mt-1 w-5 h-5 rounded-full bg-[color:var(--c-sage)]/25 text-[color:var(--c-forest)] flex items-center justify-center text-xs font-bold">✓</span>
+              <div>
+                <strong>Direct Heritage Support.</strong>
+                <span class="text-[color:var(--c-mute)]">Our booking structures prioritize family-owned riads,
+                  historic ryokans, and independent estates.</span>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span
+                class="mt-1 w-5 h-5 rounded-full bg-[color:var(--c-sage)]/25 text-[color:var(--c-forest)] flex items-center justify-center text-xs font-bold">✓</span>
+              <div>
+                <strong>Zero-Plastic Guidance.</strong>
+                <span class="text-[color:var(--c-mute)]">We work with ground coordinators to utilize plastic-free
+                  logistics and sustainable local purveyors.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. TRAVEL STYLES TABS ============ -->
+    <section class="py-24 md:py-32 bg-[color:var(--c-forest)] text-[color:var(--c-ivory)]">
+      <div class="container-x">
+        <div class="max-w-2xl reveal">
+          <p class="ornament mb-5 text-[color:var(--c-ivory)]/60">
+            <span>By travel style</span>
+          </p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            How do you like to travel?
+          </h2>
+          <p class="mt-5 opacity-70">
+            Pick a mood. We'll surface the itineraries that feel most like
+            you.
+          </p>
+        </div>
+
+        <div class="mt-12 flex flex-wrap gap-2 reveal" role="tablist" id="styleTabs">
+          <button role="tab" aria-selected="true"
+            class="tab-btn px-5 py-2.5 rounded-full bg-[color:var(--c-ivory)] text-[color:var(--c-forest)] font-medium text-sm">
+            Slow &amp; cultural
+          </button>
+          <button role="tab" aria-selected="false"
+            class="tab-btn px-5 py-2.5 rounded-full border border-[color:var(--c-ivory)]/30 text-sm">
+            Adventure
+          </button>
+          <button role="tab" aria-selected="false"
+            class="tab-btn px-5 py-2.5 rounded-full border border-[color:var(--c-ivory)]/30 text-sm">
+            Romance
+          </button>
+          <button role="tab" aria-selected="false"
+            class="tab-btn px-5 py-2.5 rounded-full border border-[color:var(--c-ivory)]/30 text-sm">
+            Culinary
+          </button>
+          <button role="tab" aria-selected="false"
+            class="tab-btn px-5 py-2.5 rounded-full border border-[color:var(--c-ivory)]/30 text-sm">
+            Wellness
+          </button>
+          <button role="tab" aria-selected="false"
+            class="tab-btn px-5 py-2.5 rounded-full border border-[color:var(--c-ivory)]/30 text-sm">
+            Family
+          </button>
+        </div>
+
+        <div id="styleGrid" class="mt-10 grid md:grid-cols-3 gap-5">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9. SIGNATURE EXPERIENCES (BENTO) ============ -->
+    <section id="experiences" class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
+          <div class="max-w-2xl">
+            <p class="ornament mb-5"><span>Signature experiences</span></p>
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+              The moments money can't usually buy.
+            </h2>
+          </div>
+          <p class="text-[color:var(--c-mute)] max-w-sm">
+            Private access, rare tables, and once-a-year rituals — all
+            bookable through Wanderly.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-6 md:grid-rows-[repeat(3,200px)] gap-4 reveal-stagger">
+          <div class="md:col-span-3 md:row-span-2 rounded-[var(--r-lg)] overflow-hidden zoom relative lift">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80"
+              alt="Chef plating a course in a fine dining kitchen"
+              class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="chip !bg-white/15 !text-white">Tokyo</span>
+              <h3 class="font-display text-2xl md:text-3xl mt-3">
+                Private omakase for two, with Chef Nakamura
+              </h3>
+            </div>
+          </div>
+          <div class="md:col-span-3 rounded-[var(--r-lg)] overflow-hidden zoom relative lift">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80"
+              alt="Hot air balloons over a misty valley at sunrise"
+              class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="chip !bg-white/15 !text-white">Cappadocia</span>
+              <h3 class="font-display text-xl md:text-2xl mt-2">
+                Dawn balloon, private basket
+              </h3>
+            </div>
+          </div>
+          <div
+            class="md:col-span-3 rounded-[var(--r-lg)] bg-[color:var(--c-terra)] text-white p-7 flex flex-col justify-between lift">
+            <span class="chip !bg-white/20 !text-white">Florence</span>
+            <div>
+              <h3 class="font-display text-2xl">After-hours Uffizi, solo</h3>
+              <p class="text-sm opacity-80 mt-2">
+                Walk the Vasari corridor with an art historian.
+              </p>
+            </div>
+          </div>
+          <div
+            class="md:col-span-2 rounded-[var(--r-lg)] bg-[color:var(--c-forest)] text-white p-7 flex flex-col justify-between lift">
+            <span class="chip !bg-white/20 !text-white">Florence</span>
+            <div>
+              <h3 class="font-display text-2xl">After-hours Uffizi, solo</h3>
+              <p class="text-sm opacity-80 mt-2">
+                Walk the Vasari corridor with an art historian.
+              </p>
+            </div>
+          </div>
+          <div class="md:col-span-2 rounded-[var(--r-lg)] overflow-hidden zoom relative lift">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=80"
+              alt="A secluded fjord with mountains" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="chip !bg-white/15 !text-white">Norway</span>
+              <h3 class="font-display text-xl mt-2">
+                Private yacht, Geirangerfjord
+              </h3>
+            </div>
+          </div>
+          <div
+            class="md:col-span-2 rounded-[var(--r-lg)] bg-[color:var(--c-ivory)] border border-[color:var(--c-line)] p-7 flex flex-col justify-between lift">
+            <span class="chip">Jaipur</span>
+            <div>
+              <h3 class="font-display text-2xl">
+                Block-printing with a master.
+              </h3>
+              <p class="text-sm text-[color:var(--c-mute)] mt-2">
+                Take home your own Sanganer textile.
+              </p>
+            </div>
+          </div>
+          <div
+            class="md:col-span-6 rounded-[var(--r-lg)] bg-[color:var(--c-paper)] p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 lift">
+            <div>
+              <h3 class="font-display text-2xl md:text-3xl">
+                Have a very specific dream in mind?
+              </h3>
+              <p class="text-[color:var(--c-mute)] mt-2 max-w-xl">
+                Tell our editors. We've arranged everything from private
+                ballet rehearsals in Vienna to a dawn yoga class on the Great
+                Wall.
+              </p>
+            </div>
+            <a href="#contact" class="btn-primary whitespace-nowrap">Request something rare
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M7 17L17 7M17 7H9M17 7V15" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10. STATISTICS COUNTER ============ -->
+    <section class="py-24 bg-[color:var(--c-paper)] border-y border-[color:var(--c-line)]">
+      <div class="container-x grid grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left">
+        <div class="reveal">
+          <p class="font-display text-5xl md:text-6xl ticker" data-target="142">
+            0
+          </p>
+          <p class="mt-2 text-[color:var(--c-mute)] text-sm">
+            Countries covered
+          </p>
+        </div>
+        <div class="reveal">
+          <p class="font-display text-5xl md:text-6xl ticker" data-target="48000" data-suffix="+">
+            0
+          </p>
+          <p class="mt-2 text-[color:var(--c-mute)] text-sm">
+            Travelers hosted
+          </p>
+        </div>
+        <div class="reveal">
+          <p class="font-display text-5xl md:text-6xl ticker" data-target="98" data-suffix="%">
+            0
+          </p>
+          <p class="mt-2 text-[color:var(--c-mute)] text-sm">
+            Would book again
+          </p>
+        </div>
+        <div class="reveal">
+          <p class="font-display text-5xl md:text-6xl ticker" data-target="2100" data-suffix="+">
+            0
+          </p>
+          <p class="mt-2 text-[color:var(--c-mute)] text-sm">
+            Boutique partner hotels
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 11. INTERACTIVE WORLD MAP (Google Maps Integrated) ============ -->
+    <section class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="max-w-2xl mb-14 reveal">
+          <p class="ornament mb-5"><span>Where we operate</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            142 countries. 38 editors. One quiet standard.
+          </h2>
+        </div>
+
+        <div
+          class="relative bg-[color:var(--c-paper)] border border-[color:var(--c-line)] rounded-[var(--r-xl)] overflow-hidden aspect-[2/1] reveal">
+          <!-- Google Maps Interactive Embed -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d45000000!2d0!3d10!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1717340000000!5m2!1sen!2s"
+            class="absolute inset-0 w-full h-full border-0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" style="
+                filter: grayscale(0.9) contrast(1.1) sepia(0.15)
+                  brightness(0.95);
+              ">
+          </iframe>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-4 gap-6 reveal-stagger">
+          <div class="border border-[color:var(--c-line)] rounded-[var(--r-md)] p-6 lift bg-[color:var(--c-paper)]">
+            <h4 class="font-display text-xl">The Americas</h4>
+            <p class="text-sm text-[color:var(--c-mute)] mt-2">
+              18 countries · 6 editors on the ground
+            </p>
+          </div>
+          <div class="border border-[color:var(--c-line)] rounded-[var(--r-md)] p-6 lift bg-[color:var(--c-paper)]">
+            <h4 class="font-display text-xl">Europe</h4>
+            <p class="text-sm text-[color:var(--c-mute)] mt-2">
+              34 countries · 11 editors on the ground
+            </p>
+          </div>
+          <div class="border border-[color:var(--c-line)] rounded-[var(--r-md)] p-6 lift bg-[color:var(--c-paper)]">
+            <h4 class="font-display text-xl">Africa &amp; Middle East</h4>
+            <p class="text-sm text-[color:var(--c-mute)] mt-2">
+              26 countries · 5 editors on the ground
+            </p>
+          </div>
+          <div class="border border-[color:var(--c-line)] rounded-[var(--r-md)] p-6 lift bg-[color:var(--c-paper)]">
+            <h4 class="font-display text-xl">Asia &amp; Oceania</h4>
+            <p class="text-sm text-[color:var(--c-mute)] mt-2">
+              64 countries · 16 editors on the ground
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE WANDERLY DIFFERENCE / PHILOSOPHY ============ -->
+    <section class="py-24 md:py-32 bg-[color:var(--c-forest)] text-[color:var(--c-ivory)]">
+      <div class="container-x">
+        <div class="max-w-3xl mb-16 reveal">
+          <p class="ornament mb-5 text-[color:var(--c-ivory)]/60">
+            <span>Our Ethos</span>
+          </p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Travel that gives back as much as it takes.
+          </h2>
+          <p class="mt-6 text-[color:var(--c-ivory)]/80 text-lg leading-relaxed">
+            We believe in slow travel, supporting local economies, and
+            preserving the environments we explore. Every journey booked
+            through Wanderly contributes to grassroots conservation efforts.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10 reveal-stagger border-t border-[color:var(--c-ivory)]/20 pt-16">
+          <div>
+            <div
+              class="w-12 h-12 rounded-full border border-[color:var(--c-terra)] flex items-center justify-center text-[color:var(--c-terra)] mb-5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                <line x1="16" y1="8" x2="2" y2="22" />
+                <line x1="17.5" y1="15" x2="9" y2="15" />
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl mb-3">Carbon Conscious</h3>
+            <p class="opacity-70 text-sm leading-relaxed">
+              We calculate the carbon footprint of your entire trip—flights,
+              stays, and transfers—and offset it by 150% through certified
+              reforestation projects in the Amazon and Southeast Asia.
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-12 h-12 rounded-full border border-[color:var(--c-gold)] flex items-center justify-center text-[color:var(--c-gold)] mb-5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl mb-3">Hyper-Local Economies</h3>
+            <p class="opacity-70 text-sm leading-relaxed">
+              85% of your trip cost goes directly to family-owned boutique
+              hotels, independent local guides, and community-run experiences,
+              ensuring wealth stays where it belongs.
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-12 h-12 rounded-full border border-[color:var(--c-sage)] flex items-center justify-center text-[color:var(--c-sage)] mb-5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl mb-3">B Corp Certified</h3>
+            <p class="opacity-70 text-sm leading-relaxed">
+              We are legally bound to balance profit with purpose. Our
+              operations, supply chain, and employee benefits undergo rigorous
+              auditing every year to maintain the highest ethical standards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEW SECTION: GIFTING & CORPORATE OFFSETS ============ -->
+    <section id="gifting" class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="max-w-3xl mb-16 reveal">
+          <p class="ornament mb-5">
+            <span>Private Portfolios &amp; Retreats</span>
+          </p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Shared journeys and physical portfolios.
+          </h2>
+          <p class="mt-6 text-[color:var(--c-mute)] text-lg leading-relaxed">
+            Beyond individual journeys, we structure custom corporate retreats
+            and physical gifting portfolios featuring hand-bound leather
+            itineraries.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-6 reveal-stagger">
+          <!-- Card 1: Bound Portfolio Gifting -->
+          <div
+            class="md:col-span-7 bg-[color:var(--c-paper)] rounded-[var(--r-lg)] p-8 md:p-12 flex flex-col justify-between border border-[color:var(--c-line)] hover:shadow-md transition">
+            <div>
+              <span class="chip mb-6"><span class="dot"></span>Wanderly Bound Edition</span>
+              <h3 class="font-display text-3xl md:text-4xl text-[color:var(--c-forest)] mb-4">
+                An elegant, tangible gift.
+              </h3>
+              <p class="text-sm md:text-base text-[color:var(--c-mute)] leading-relaxed max-w-md">
+                Gift a completely customized itinerary framework packaged
+                inside a premium, hand-bound leather dossier. Our studio
+                coordinates with you to design and deliver the physical copy
+                in a bespoke gift chest.
+              </p>
+            </div>
+            <div class="mt-8">
+              <a href="#contact" class="btn-primary text-xs">Inquire About Gifting</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Corporate Offsites -->
+          <div
+            class="md:col-span-5 bg-[color:var(--c-forest)] text-[color:var(--c-ivory)] rounded-[var(--r-lg)] p-8 md:p-12 flex flex-col justify-between hover:shadow-md transition">
+            <div>
+              <span class="chip !bg-white/10 !text-white mb-6">Group Retreats</span>
+              <h3 class="font-display text-3xl text-white mb-4">
+                Bespoke offsites.
+              </h3>
+              <p class="text-sm opacity-80 leading-relaxed">
+                We structure multi-day retreats for creative teams, executive
+                boards, and milestones. From remote mountain chalets to
+                coastal estate buyouts, our planners manage logistics,
+                transit, and private dining.
+              </p>
+            </div>
+            <div class="mt-8">
+              <a href="#contact"
+                class="btn-primary !bg-[color:var(--c-ivory)] !text-[color:var(--c-forest)] hover:!bg-[color:var(--c-terra)] hover:!text-white text-xs">Request
+                Team Pitch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 12. SAMPLE ITINERARY TIMELINE ============ -->
+    <section id="itineraries" class="py-24 md:py-32 bg-[color:var(--c-paper)]">
+      <div class="container-x">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 reveal">
+          <div class="max-w-2xl">
+            <p class="ornament mb-5"><span>Sample itinerary</span></p>
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+              12 days in Portugal, slowly.
+            </h2>
+          </div>
+          <div class="flex gap-2">
+            <button id="tlPrev"
+              class="w-11 h-11 rounded-full border border-[color:var(--c-line)] grid place-items-center hover:bg-[color:var(--c-forest)] hover:text-[color:var(--c-ivory)] transition"
+              aria-label="Previous">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button id="tlNext"
+              class="w-11 h-11 rounded-full border border-[color:var(--c-line)] grid place-items-center hover:bg-[color:var(--c-forest)] hover:text-[color:var(--c-ivory)] transition"
+              aria-label="Next">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="tlTrack" class="tl-track reveal">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 13. CURATED COLLECTIONS ============ -->
+    <section class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="max-w-3xl mb-14 reveal">
+          <p class="ornament mb-5"><span>Seasonal collections</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Twelve hand-picked journeys for the season.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 reveal-stagger">
+          <article
+            class="group lift rounded-[var(--r-lg)] overflow-hidden border border-[color:var(--c-line)] bg-[color:var(--c-forest)]">
+            <div class="p-7">
+              <h3 class="font-display text-2xl text-white">
+                Quiet coastlines
+              </h3>
+              <p class="mt-2 text-[color:var(--c-paper)] text-sm">
+                Hidden seaside villages and peaceful bays — perfect for slow
+                mornings and quiet reflection.
+              </p>
+              <p class="mt-2 text-[color:var(--c-terra)] text-sm">
+                Gentle waves, empty beaches, and endless horizons create the
+                perfect setting for slowing down, leaving the everyday rush
+                behind, and embracing long walks by the shore, quiet moments
+                of reflection, and the simple pleasure of watching the sea
+                stretch endlessly into the distance.
+              </p>
+              <p class="mt-2 text-[color:var(--c-paper)] text-sm">
+                Discover tranquil shores where time slows down and every walk
+                follows the rhythm of the sea.
+              </p>
+              <p class="mt-2 text-[color:var(--c-paper)] text-sm">
+                From secluded coves to windswept cliffs — find calm places
+                that invite you to linger longer.
+              </p>
+              <a href="#" class="mt-5 inline-flex items-center gap-2 ulink text-sm text-white">Browse the collection
+                →</a>
+            </div>
+          </article>
+          <article
+            class="group lift rounded-[var(--r-lg)] overflow-hidden bg-white border border-[color:var(--c-line)]">
+            <div class="zoom aspect-[4/3] relative">
+              <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1000&q=80"
+                alt="Mountain trail with hikers" class="absolute inset-0 w-full h-full object-cover" />
+              <span class="absolute top-4 left-4 chip">Spring 2026</span>
+            </div>
+            <div class="p-7">
+              <h3 class="font-display text-2xl">High altitude</h3>
+              <p class="mt-2 text-[color:var(--c-mute)] text-sm">
+                Dolomites, Bhutan, Atacama — five guided mountain journeys
+                with porter teams.
+              </p>
+              <a href="#" class="mt-5 inline-flex items-center gap-2 ulink text-sm">Browse the collection →</a>
+            </div>
+          </article>
+          <article
+            class="group lift rounded-[var(--r-lg)] overflow-hidden bg-white border border-[color:var(--c-line)]">
+            <div class="zoom aspect-[4/3] relative">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80"
+                alt="A traditional alleyway in a North African medina"
+                class="absolute inset-0 w-full h-full object-cover" />
+              <span class="absolute top-4 left-4 chip">Spring 2026</span>
+            </div>
+            <div class="p-7">
+              <h3 class="font-display text-2xl">Craft &amp; makers</h3>
+              <p class="mt-2 text-[color:var(--c-mute)] text-sm">
+                Private studio visits in Oaxaca, Kyoto, Jaipur, and Fez — meet
+                the people behind the objects.
+              </p>
+              <a href="#" class="mt-5 inline-flex items-center gap-2 ulink text-sm">Browse the collection →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSPIRATION GALLERY ============ -->
+    <section class="py-24 md:py-32 overflow-hidden bg-[color:var(--c-paper)] border-t border-[color:var(--c-line)]">
+      <div class="container-x">
+        <div class="max-w-2xl mb-12 reveal">
+          <p class="ornament mb-5"><span>Visual Escapes</span></p>
+          <h2 class="font-display text-4xl md:text-5xl balance">
+            Moments captured on recent journeys.
+          </h2>
+          <p class="mt-4 text-[color:var(--c-mute)]">
+            Real photos from our travelers and editors on the ground.
+          </p>
+        </div>
+
+        <!-- The 4-column Grid container -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 reveal-stagger">
+
+          <!-- ITEM 1: Configured to span 2 rows vertically on tablet & desktop, stretching to 100% parent row height -->
+          <div
+            class="relative group rounded-[var(--r-md)] overflow-hidden aspect-[4/5] md:aspect-auto md:row-span-2 md:h-full zoom lift">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=600&q=80"
+              alt="Venice canals" class="absolute inset-0 w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <p
+                class="text-white font-display text-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                Venice, Italy
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 (Standard height) -->
+          <div class="relative group rounded-[var(--r-md)] overflow-hidden aspect-[4/5] zoom lift">
+            <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=600&q=80"
+              alt="Thailand jungle" class="absolute inset-0 w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <p
+                class="text-white font-display text-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                Chiang Mai, Thailand
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 (Standard height) -->
+          <div class="relative group rounded-[var(--r-md)] overflow-hidden aspect-[4/5] zoom lift">
+            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=600&q=80"
+              alt="Paris streets" class="absolute inset-0 w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <p
+                class="text-white font-display text-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                Paris, France
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 (Standard height) -->
+          <div class="relative group rounded-[var(--r-md)] overflow-hidden aspect-[4/5] zoom lift">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80"
+              alt="Dubai" class="absolute inset-0 w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <p
+                class="text-white font-display text-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                Dubai, UAE
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 5 (Standard height) -->
+          <div class="relative group rounded-[var(--r-md)] overflow-hidden aspect-[4/5] zoom lift">
+            <img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?auto=format&fit=crop&w=600&q=80"
+              alt="Swiss Alps" class="absolute inset-0 w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <p
+                class="text-white font-display text-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                Zermatt, Switzerland
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 6 (Standard height) -->
+          <div class="relative group rounded-[var(--r-md)] overflow-hidden aspect-[4/5] zoom lift">
+            <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&w=600&q=80"
+              alt="Morocco" class="absolute inset-0 w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <p
+                class="text-white font-display text-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                Chefchaouen, Morocco
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 7 (Standard height) -->
+          <div class="relative group rounded-[var(--r-md)] overflow-hidden aspect-[4/5] zoom lift hidden md:block">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80"
+              alt="Mountains" class="absolute inset-0 w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <p
+                class="text-white font-display text-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                Banff, Canada
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-12 text-center reveal">
+          <a href="#" class="btn-ghost">View Full Gallery
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CORPORATE & MILESTONES ============ -->
+    <section class="py-24 md:py-32 bg-[color:var(--c-ivory)]">
+      <div class="container-x grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal order-2 lg:order-1 relative">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4 mt-8">
+              <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80"
+                alt="Wedding celebration" class="rounded-[var(--r-md)] w-full h-48 object-cover lift" />
+              <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80"
+                alt="Friends dining" class="rounded-[var(--r-md)] w-full h-64 object-cover lift" />
+            </div>
+            <div class="space-y-4">
+              <img src="https://images.unsplash.com/photo-1522228115018-d838bcce5c3a?auto=format&fit=crop&w=600&q=80"
+                alt="Corporate retreat" class="rounded-[var(--r-md)] w-full h-64 object-cover lift" />
+              <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80"
+                alt="Group toast" class="rounded-[var(--r-md)] w-full h-48 object-cover lift" />
+            </div>
+          </div>
+        </div>
+        <div class="reveal order-1 lg:order-2">
+          <p class="ornament mb-5"><span>Gatherings</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Milestones &amp; Retreats.
+          </h2>
+          <p class="mt-6 text-[color:var(--c-mute)] text-lg leading-relaxed">
+            Whether it's a 50th birthday on a private gulet in Capri, a
+            20-person corporate executive retreat in the Swiss Alps, or an
+            intimate destination wedding, our dedicated Group Concierge
+            handles the infinite logistics so you only have to focus on the
+            memories.
+          </p>
+
+          <ul class="mt-8 space-y-4 text-[15px]" role="list">
+            <li class="flex gap-4">
+              <span
+                class="mt-1 w-6 h-6 rounded-full border border-[color:var(--c-forest)] grid place-items-center text-[color:var(--c-forest)] text-xs flex-none">1</span>
+              <div>
+                <strong>Bespoke Sourcing:</strong> Full property buyouts and
+                chartered transit.
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span
+                class="mt-1 w-6 h-6 rounded-full border border-[color:var(--c-forest)] grid place-items-center text-[color:var(--c-forest)] text-xs flex-none">2</span>
+              <div>
+                <strong>Guest Management:</strong> Individual RSVPs, dietary
+                needs, and custom arrival logistics handled by our team.
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span
+                class="mt-1 w-6 h-6 rounded-full border border-[color:var(--c-forest)] grid place-items-center text-[color:var(--c-forest)] text-xs flex-none">3</span>
+              <div>
+                <strong>On-Site Coordination:</strong> An editor flies out to
+                manage events in real-time.
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-10">
+            <a href="#contact" class="btn-primary">Inquire about a group
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M7 17L17 7M17 7H9M17 7V15" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 14. HOTEL PARTNERS ============ -->
+    <section class="py-24 md:py-32 bg-[color:var(--c-paper)]">
+      <div class="container-x">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+          <div class="reveal">
+            <p class="ornament mb-5"><span>Our partners</span></p>
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+              Hotels we know by name. Managers we know by first name.
+            </h2>
+            <p class="mt-6 text-[color:var(--c-mute)] text-lg leading-relaxed max-w-lg">
+              Every Wanderly partner is stayed-in, vetted, and revisited
+              yearly. You'll never see a property we haven't slept in
+              ourselves.
+            </p>
+            <div class="mt-8 grid grid-cols-2 gap-x-10 gap-y-4 text-[15px]">
+              <div class="flex justify-between border-b border-[color:var(--c-line)] py-2">
+                <span>Aman</span><span class="text-[color:var(--c-mute)]">14</span>
+              </div>
+              <div class="flex justify-between border-b border-[color:var(--c-line)] py-2">
+                <span>Six Senses</span><span class="text-[color:var(--c-mute)]">22</span>
+              </div>
+              <div class="flex justify-between border-b border-[color:var(--c-line)] py-2">
+                <span>Belmond</span><span class="text-[color:var(--c-mute)]">18</span>
+              </div>
+              <div class="flex justify-between border-b border-[color:var(--c-line)] py-2">
+                <span>One&amp;Only</span><span class="text-[color:var(--c-mute)]">9</span>
+              </div>
+              <div class="flex justify-between border-b border-[color:var(--c-line)] py-2">
+                <span>Independent</span><span class="text-[color:var(--c-mute)]">2,047</span>
+              </div>
+              <div class="flex justify-between border-b border-[color:var(--c-line)] py-2">
+                <span>Relais &amp; Châteaux</span><span class="text-[color:var(--c-mute)]">86</span>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 reveal-stagger">
+            <div class="zoom rounded-[var(--r-md)] overflow-hidden aspect-[3/4] lift">
+              <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"
+                alt="Luxury boutique hotel bedroom with linen sheets" class="w-full h-full object-cover" />
+            </div>
+            <div class="zoom rounded-[var(--r-md)] overflow-hidden aspect-[3/4] mt-10 lift">
+              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
+                alt="Infinity pool overlooking mountains" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 14b. NEW SECTION: WANDERLY PERKS SPOTLIGHT (INTERACTIVE SPECIFIC VALUE) ============ -->
+    <section class="py-24 md:py-32 bg-white">
+      <div class="container-x">
+        <div class="max-w-3xl mx-auto text-center reveal mb-16">
+          <p class="ornament mb-5"><span>Wanderly Exclusive Perks</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Preferred amenities, secured at zero cost.
+          </h2>
+          <p class="mt-6 text-[color:var(--c-mute)] text-lg">
+            Through our deep partner relationships, every Wanderly Signature
+            and Bespoke client inherits elite preferred agency credentials.
+            Simply select a partner below to see the exclusive benefits loaded
+            into your booking.
+          </p>
+        </div>
+
+        <!-- Perks dynamic interactive module -->
+        <div class="grid lg:grid-cols-12 gap-8 items-stretch reveal">
+          <div class="lg:col-span-4 flex flex-col justify-start gap-3">
+            <button id="perkAman"
+              class="perk-tab-btn text-left p-6 rounded-xl border border-[color:var(--c-forest)] bg-[color:var(--c-ivory)] transition-all duration-300">
+              <p class="font-display text-xl text-[color:var(--c-forest)]">
+                Aman Resorts
+              </p>
+              <p class="text-xs text-[color:var(--c-mute)] mt-1">
+                Peaceful, site-integrated sanctuaries
+              </p>
+            </button>
+            <button id="perkBelmond"
+              class="perk-tab-btn text-left p-6 rounded-xl border border-[color:var(--c-line)] hover:border-[color:var(--c-forest)] transition-all duration-300">
+              <p class="font-display text-xl text-[color:var(--c-ink)]">
+                Belmond Properties
+              </p>
+              <p class="text-xs text-[color:var(--c-mute)] mt-1">
+                Historic landmarks, trains &amp; cruises
+              </p>
+            </button>
+            <button id="perkSixSenses"
+              class="perk-tab-btn text-left p-6 rounded-xl border border-[color:var(--c-line)] hover:border-[color:var(--c-forest)] transition-all duration-300">
+              <p class="font-display text-xl text-[color:var(--c-ink)]">
+                Six Senses
+              </p>
+              <p class="text-xs text-[color:var(--c-mute)] mt-1">
+                Immersive wellness and extreme ecology
+              </p>
+            </button>
+          </div>
+
+          <div
+            class="lg:col-span-8 bg-[color:var(--c-paper)] rounded-2xl p-8 border border-[color:var(--c-line)] flex flex-col justify-between"
+            id="perksContentCard">
+            <!-- populated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 15. TESTIMONIAL SLIDER ============ -->
+    <section class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 reveal">
+          <div class="max-w-2xl">
+            <p class="ornament mb-5"><span>Traveler stories</span></p>
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+              Quiet praise, loudly appreciated.
+            </h2>
+          </div>
+          <div class="flex gap-2">
+            <button id="tsPrev"
+              class="w-11 h-11 rounded-full border border-[color:var(--c-line)] grid place-items-center hover:bg-[color:var(--c-forest)] hover:text-[color:var(--c-ivory)] transition"
+              aria-label="Previous testimonial">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button id="tsNext"
+              class="w-11 h-11 rounded-full border border-[color:var(--c-line)] grid place-items-center hover:bg-[color:var(--c-forest)] hover:text-[color:var(--c-ivory)] transition"
+              aria-label="Next testimonial">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="tsTrack" class="slider reveal" role="region" aria-label="Testimonials">
+          <!-- slides injected -->
+        </div>
+        <div id="tsDots" class="mt-8 flex justify-center gap-2"></div>
+      </div>
+    </section>
+
+    <!-- ============ 16. VIDEO / MOOD STORY (Autoplayable Nature Video) ============ -->
+    <section class="py-24 md:py-32 bg-[color:var(--c-forest)] text-[color:var(--c-ivory)]">
+      <div class="container-x grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 reveal">
+          <p class="ornament mb-5 text-[color:var(--c-ivory)]/60">
+            <span>The Wanderly mood</span>
+          </p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Two minutes. A thousand miles.
+          </h2>
+          <p class="mt-6 opacity-75 leading-relaxed max-w-md">
+            Our short film, shot across eight countries in 2025 — a reminder
+            of what travel does, when it's done slowly.
+          </p>
+          <button id="btnActionWatch"
+            class="btn-ghost mt-8 border-[color:var(--c-ivory)]/40 text-[color:var(--c-ivory)] bg-white hover:bg-[color:var(--c-ivory)] hover:text-[color:var(--c-forest)] transition cursor-pointer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Watch the film
+          </button>
+        </div>
+        <div class="lg:col-span-7 reveal relative group">
+          <div
+            class="rounded-[var(--r-xl)] overflow-hidden aspect-video relative zoom cursor-pointer bg-black shadow-[var(--shadow-lg)]">
+            <!-- Direct CDN Streamable MP4 Video -->
+            <video id="moodVideo" src="https://vjs.zencdn.net/v/oceans.mp4"
+              class="absolute inset-0 w-full h-full object-cover" playsinline loop muted
+              poster="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80"></video>
+            <!-- Overlay and Play Button -->
+            <div id="videoOverlay"
+              class="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+              <button id="videoPlayBtn"
+                class="w-20 h-20 rounded-full bg-[color:var(--c-ivory)] text-[color:var(--c-forest)] grid place-items-center shadow-[var(--shadow-lg)] transition hover:scale-105"
+                aria-label="Play video">
+                <svg id="playIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <svg id="pauseIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" class="hidden">
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 17. PRICING ============ -->
+    <section id="pricing" class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="max-w-3xl mb-14 reveal">
+          <p class="ornament mb-5"><span>Transparent pricing</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Pick a tier. Your trip starts the moment you do.
+          </h2>
+          <p class="mt-5 text-[color:var(--c-mute)]">
+            All tiers include one complimentary itinerary revision and 24/7
+            concierge during your trip.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 reveal-stagger">
+          <!-- Essential -->
+          <div class="border border-[color:var(--c-line)] rounded-[var(--r-lg)] p-8 lift flex flex-col">
+            <p class="text-xs uppercase tracking-[.2em] text-[color:var(--c-mute)]">
+              Essential
+            </p>
+            <p class="font-display text-4xl mt-3">
+              $29<span class="text-base font-sans text-[color:var(--c-mute)]">/trip</span>
+            </p>
+            <p class="mt-2 text-sm text-[color:var(--c-mute)]">
+              AI-drafted itinerary with a light human review.
+            </p>
+            <ul class="mt-7 space-y-3 text-sm flex-1">
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-forest)]">✓</span>Draft in 24
+                hours
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-forest)]">✓</span>3 hotel
+                options per night
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-forest)]">✓</span>In-app
+                booking
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-forest)]">✓</span>Email
+                support
+              </li>
+            </ul>
+            <a href="#" class="btn-ghost justify-center mt-8">Choose Essential</a>
+          </div>
+          <!-- Signature -->
+          <div class="price-highlight rounded-[var(--r-lg)] p-8 lift flex flex-col relative overflow-hidden">
+            <span class="absolute top-6 right-6 chip !bg-[color:var(--c-terra)] !text-white">Most popular</span>
+            <p class="text-xs uppercase tracking-[.2em] opacity-70">
+              Signature
+            </p>
+            <p class="font-display text-4xl mt-3">
+              $199<span class="text-base font-sans opacity-70">/trip</span>
+            </p>
+            <p class="mt-2 text-sm opacity-70">
+              Human editor, dedicated to you, with full booking.
+            </p>
+            <ul class="mt-7 space-y-3 text-sm flex-1">
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-terra)]">✓</span>Draft in 48
+                hours
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-terra)]">✓</span>Two live
+                refinement calls
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-terra)]">✓</span>Restaurant
+                &amp; experience reservations
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-terra)]">✓</span>24/7 on-trip
+                concierge
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-terra)]">✓</span>Printed trip
+                book, shipped
+              </li>
+            </ul>
+            <a href="#"
+              class="mt-8 inline-flex items-center justify-center gap-2 bg-[color:var(--c-ivory)] text-[color:var(--c-forest)] rounded-full py-3 font-medium hover:bg-[color:var(--c-terra)] hover:text-white transition">Choose
+              Signature
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M7 17L17 7M17 7H9M17 7V15" />
+              </svg>
+            </a>
+          </div>
+          <!-- Bespoke -->
+          <div class="border border-[color:var(--c-line)] rounded-[var(--r-lg)] p-8 lift flex flex-col">
+            <p class="text-xs uppercase tracking-[.2em] text-[color:var(--c-mute)]">
+              Bespoke
+            </p>
+            <p class="font-display text-4xl mt-3">From $1,200</p>
+            <p class="mt-2 text-sm text-[color:var(--c-mute)]">
+              A senior editor for multi-country or multi-week journeys.
+            </p>
+            <ul class="mt-7 space-y-3 text-sm flex-1">
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-forest)]">✓</span>Everything
+                in Signature
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-forest)]">✓</span>Private
+                guides &amp; drivers
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-forest)]">✓</span>Rare-access
+                experiences
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-forest)]">✓</span>Dedicated
+                WhatsApp line
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[color:var(--c-forest)]">✓</span>In-trip
+                surprise, on us
+              </li>
+            </ul>
+            <a href="#contact" class="btn-ghost justify-center mt-8">Talk to an editor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 18. EXPERTS / TEAM WITH INTERACTIVE FINDER ============ -->
+    <section id="experts" class="py-24 md:py-32 bg-[color:var(--c-paper)]">
+      <div class="container-x">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
+          <div class="max-w-2xl">
+            <p class="ornament mb-5"><span>The editors</span></p>
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+              Real people. Well-traveled.
+            </h2>
+          </div>
+
+          <!-- Interactive Region Filter -->
+          <div class="flex flex-wrap gap-2" id="expertFilters">
+            <button data-region="All"
+              class="px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-[color:var(--c-forest)] text-white transition-all cursor-pointer">
+              All Editors
+            </button>
+            <button data-region="Europe"
+              class="px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-white border border-[color:var(--c-line)] text-[color:var(--c-mute)] hover:text-[color:var(--c-ink)] transition-all cursor-pointer">
+              Europe
+            </button>
+            <button data-region="Asia"
+              class="px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-white border border-[color:var(--c-line)] text-[color:var(--c-mute)] hover:text-[color:var(--c-ink)] transition-all cursor-pointer">
+              Asia
+            </button>
+            <button data-region="Africa"
+              class="px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-white border border-[color:var(--c-line)] text-[color:var(--c-mute)] hover:text-[color:var(--c-ink)] transition-all cursor-pointer">
+              Africa
+            </button>
+            <button data-region="Americas"
+              class="px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-white border border-[color:var(--c-line)] text-[color:var(--c-mute)] hover:text-[color:var(--c-ink)] transition-all cursor-pointer">
+              Americas
+            </button>
+          </div>
+        </div>
+
+        <!-- Cards display -->
+        <div class="grid md:grid-cols-4 gap-6" id="expertCardsContainer">
+          <!-- dynamic from script -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 19. JOURNAL ============ -->
+    <section id="journal" class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
+          <div class="max-w-2xl">
+            <p class="ornament mb-5"><span>From the journal</span></p>
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+              Slow writing about places worth the trip.
+            </h2>
+          </div>
+          <a href="#" class="btn-ghost self-start md:self-end">All stories
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 reveal-stagger">
+          <article class="lift group">
+            <div class="zoom rounded-[var(--r-md)] overflow-hidden aspect-[4/3]">
+              <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1000&q=80"
+                alt="A small boat on a misty lake" class="w-full h-full object-cover" />
+            </div>
+            <p class="mt-5 text-xs uppercase tracking-widest text-[color:var(--c-mute)]">
+              Essay · 9 min read
+            </p>
+            <h3 class="font-display text-2xl mt-2 group-hover:text-[color:var(--c-terra)] transition">
+              Why the best trips are slightly too long
+            </h3>
+            <p class="text-[color:var(--c-mute)] mt-2 text-sm">
+              On boredom, surrender, and the moment a place finally lets you
+              in.
+            </p>
+          </article>
+          <article class="lift group">
+            <div class="zoom rounded-[var(--r-md)] overflow-hidden aspect-[4/3]">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=80"
+                alt="A plate of freshly prepared local food" class="w-full h-full object-cover" />
+            </div>
+            <p class="mt-5 text-xs uppercase tracking-widest text-[color:var(--c-mute)]">
+              Guide · 12 min read
+            </p>
+            <h3 class="font-display text-2xl mt-2 group-hover:text-[color:var(--c-terra)] transition">
+              The 40 tables we'd cross oceans for
+            </h3>
+            <p class="text-[color:var(--c-mute)] mt-2 text-sm">
+              Our editors' current shortlist — updated monthly.
+            </p>
+          </article>
+          <article class="lift group">
+            <div class="zoom rounded-[var(--r-md)] overflow-hidden aspect-[4/3]">
+              <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=80"
+                alt="Eiffel tower seen through a narrow Parisian street" class="w-full h-full object-cover" />
+            </div>
+            <p class="mt-5 text-xs uppercase tracking-widest text-[color:var(--c-mute)]">
+              Dispatch · 6 min read
+            </p>
+            <h3 class="font-display text-2xl mt-2 group-hover:text-[color:var(--c-terra)] transition">
+              Notes from a very quiet Paris
+            </h3>
+            <p class="text-[color:var(--c-mute)] mt-2 text-sm">
+              A three-day off-season stroll through a familiar city.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 20. APP DOWNLOAD ============ -->
+    <section class="py-24 md:py-32 bg-[color:var(--c-paper)]">
+      <div class="container-x grid lg:grid-cols-2 gap-14 items-center">
+        <div class="reveal relative order-2 lg:order-1 flex justify-center">
+          <div
+            class="relative w-[280px] h-[580px] rounded-[46px] bg-[color:var(--c-ink)] p-3 shadow-[var(--shadow-lg)]">
+            <div class="w-full h-full rounded-[38px] bg-[color:var(--c-ivory)] overflow-hidden relative">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-[color:var(--c-ink)] rounded-b-2xl">
+              </div>
+              <div class="p-5 pt-10">
+                <p class="text-xs text-[color:var(--c-mute)]">
+                  Good morning, Maya
+                </p>
+                <h4 class="font-display text-2xl mt-1">Your Kyoto trip</h4>
+                <div class="mt-4 rounded-2xl overflow-hidden aspect-[4/3] relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=600&q=80"
+                    alt="Temple" class="w-full h-full object-cover" />
+                </div>
+                <div class="mt-4 rounded-2xl overflow-hidden aspect-[4/3] relative h-28 w-full">
+                  <img
+                    src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=600&q=80"
+                    alt="Temple" class="w-full h-full object-cover" />
+                </div>
+                <p class="mt-3 text-sm"><strong>Today · 09:00</strong></p>
+                <p class="text-sm text-[color:var(--c-mute)]">
+                  Tea ceremony at Shoren-in
+                </p>
+                <div class="mt-4 flex gap-2 text-xs">
+                  <span class="chip">Map</span><span class="chip">Tickets</span><span class="chip">Contacts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute -right-4 top-16 w-36 h-56 rounded-3xl bg-[color:var(--c-terra)] text-white p-4 shadow-[var(--shadow-md)] hidden md:block rotate-6">
+            <p class="text-xs uppercase tracking-widest opacity-80">
+              Offline ready
+            </p>
+            <p class="font-display text-xl mt-1">
+              Whole trip, in your pocket.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal order-1 lg:order-2">
+          <p class="ornament mb-5"><span>The Wanderly app</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Travel with your trip in your pocket.
+          </h2>
+          <p class="mt-6 text-[color:var(--c-mute)] text-lg leading-relaxed max-w-lg">
+            Offline maps, translated menus, live train updates, and a direct
+            line to your editor. All inside a single, beautifully designed
+            app.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#"
+              class="inline-flex items-center gap-3 bg-[color:var(--c-ink)] text-white rounded-2xl px-5 py-3 hover:bg-[color:var(--c-forest)] transition">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M17.05 12.04c-.02-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.82 0-2.07-.92-3.41-.9-1.76.03-3.38 1.02-4.28 2.6-1.82 3.16-.46 7.85 1.31 10.41.86 1.25 1.89 2.65 3.23 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.38.81 1.39-.02 2.27-1.27 3.12-2.52.98-1.43 1.39-2.83 1.41-2.9-.03-.01-2.71-1.04-2.74-4.13zM14.5 4.5c.72-.87 1.2-2.08 1.07-3.29-1.03.04-2.29.69-3.03 1.55-.66.76-1.24 1.99-1.09 3.17 1.16.09 2.33-.59 3.05-1.43z" />
+              </svg>
+              <div class="text-left">
+                <p class="text-[10px] opacity-70">Download on the</p>
+                <p class="font-display text-base leading-none">App Store</p>
+              </div>
+            </a>
+            <a href="#"
+              class="inline-flex items-center gap-3 bg-[color:var(--c-ink)] text-white rounded-2xl px-5 py-3 hover:bg-[color:var(--c-forest)] transition">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M3 20.5V3.5c0-.37.15-.72.44-.96L13.69 12 3.44 21.46A1.22 1.22 0 013 20.5zM16.81 15.12L6.05 21.34l8.49-8.49 2.27 2.27zM20.16 10.81c.5.37.5 1 0 1.37l-2.53 1.48-2.5-2.5 2.5-2.5 2.53 1.48zM6.05 2.66l10.76 6.22-2.27 2.27L6.05 2.66z" />
+              </svg>
+              <div class="text-left">
+                <p class="text-[10px] opacity-70">Get it on</p>
+                <p class="font-display text-base leading-none">Google Play</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 21. NEWSLETTER ============ -->
+    <section id="newsletter" class="py-24 md:py-32">
+      <div class="container-x">
+        <div class="max-w-3xl mx-auto text-center reveal">
+          <p class="ornament mb-5"><span>The Sunday dispatch</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            One letter. One destination. Every Sunday.
+          </h2>
+          <p class="mt-6 text-[color:var(--c-mute)] text-lg">
+            No spam, no listicles. A single, beautifully written note from
+            wherever our editors are this week — straight to your inbox.
+          </p>
+
+          <form class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto" onsubmit="
+                event.preventDefault();
+                this.querySelector('button').innerText = 'Subscribed ✓';
+                this.querySelector('input').value = '';
+              " aria-label="Newsletter signup">
+            <label class="sr-only" for="newsEmail">Email address</label>
+            <input id="newsEmail" type="email" required placeholder="your@email.com"
+              class="flex-1 rounded-full border border-[color:var(--c-line)] bg-white px-5 py-4 focus:border-[color:var(--c-forest)] focus:outline-none" />
+            <button type="submit" class="btn-primary whitespace-nowrap">
+              Send me the letter
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M7 17L17 7M17 7H9M17 7V15" />
+              </svg>
+            </button>
+          </form>
+          <p class="mt-4 text-xs text-[color:var(--c-mute)]">
+            46,218 readers · unsubscribe in one click
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 22. FAQ ============ -->
+    <section class="py-24 md:py-32 bg-[color:var(--c-paper)]">
+      <div class="container-x grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-4 reveal">
+          <p class="ornament mb-5"><span>Questions</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            Good to know.
+          </h2>
+          <p class="mt-6 text-[color:var(--c-mute)]">
+            Can't find what you need? Our team replies in under four hours.
+          </p>
+          <a href="#contact" class="btn-ghost mt-6">Email an editor
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div class="lg:col-span-8 reveal">
+          <div id="faq" role="region" aria-label="Frequently asked questions">
+            <div class="acc-item open">
+              <button class="acc-btn font-display text-xl md:text-2xl" aria-expanded="true">
+                <span>How soon can you plan a trip?</span>
+                <span class="acc-plus" aria-hidden="true">+</span>
+              </button>
+              <div class="acc-body">
+                <div>
+                  <div class="acc-body-inner">
+                    Last-minute is our specialty. Most Signature trips are
+                    drafted in 48 hours and can depart within a week. For
+                    truly bespoke journeys — multi-country, large groups, peak
+                    seasons — we prefer six to eight weeks of lead time.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-btn font-display text-xl md:text-2xl" aria-expanded="false">
+                <span>What does the planning fee cover?</span>
+                <span class="acc-plus" aria-hidden="true">+</span>
+              </button>
+              <div class="acc-body">
+                <div>
+                  <div class="acc-body-inner">
+                    The fee covers your dedicated editor's time, unlimited
+                    revisions, restaurant and experience bookings, and on-trip
+                    support. It does not include the cost of hotels, flights,
+                    or activities — those are charged transparently, at the
+                    best available rate.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-btn font-display text-xl md:text-2xl" aria-expanded="false">
+                <span>Do you book flights?</span>
+                <span class="acc-plus" aria-hidden="true">+</span>
+              </button>
+              <div class="acc-body">
+                <div>
+                  <div class="acc-body-inner">
+                    Yes — economy, premium, and business. For first-class and
+                    private aviation, we partner with a specialist and can
+                    broker those too, typically at a slight discount to direct
+                    rates.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-btn font-display text-xl md:text-2xl" aria-expanded="false">
+                <span>What if something goes wrong during my trip?</span>
+                <span class="acc-plus" aria-hidden="true">+</span>
+              </button>
+              <div class="acc-body">
+                <div>
+                  <div class="acc-body-inner">
+                    We answer our phones 24/7 during your trip. Missed train?
+                    Rained-out tour? Hotel not as promised? Call us and we'll
+                    fix it — usually within the hour.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-btn font-display text-xl md:text-2xl" aria-expanded="false">
+                <span>Can you plan a trip for a large group?</span>
+                <span class="acc-plus" aria-hidden="true">+</span>
+              </button>
+              <div class="acc-body">
+                <div>
+                  <div class="acc-body-inner">
+                    Absolutely. We regularly plan weddings, milestone
+                    birthdays, and multi-generational family trips up to 60
+                    guests. Groups above 12 fall under our Bespoke tier.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 23. AWARDS & PRESS ============ -->
+    <section class="py-24 md:py-32 bg-white">
+      <div class="container-x">
+        <div class="max-w-2xl mb-14 reveal">
+          <p class="ornament mb-5"><span>Recognition</span></p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl balance">
+            The quiet praise of others.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal-stagger">
+          <div
+            class="border border-[color:var(--c-line)] rounded-[var(--r-md)] p-7 text-center lift bg-[color:var(--c-ivory)]">
+            <div class="font-display text-3xl text-[color:var(--c-gold)]">
+              ★
+            </div>
+            <p class="font-display text-lg mt-3">Condé Nast</p>
+            <p class="text-xs text-[color:var(--c-mute)] mt-1">
+              Top Travel Specialist 2024, 2025
+            </p>
+          </div>
+          <div
+            class="border border-[color:var(--c-line)] rounded-[var(--r-md)] p-7 text-center lift bg-[color:var(--c-ivory)]">
+            <div class="font-display text-3xl text-[color:var(--c-gold)]">
+              ★
+            </div>
+            <p class="font-display text-lg mt-3">Travel + Leisure</p>
+            <p class="text-xs text-[color:var(--c-mute)] mt-1">
+              A-List, 2023–2025
+            </p>
+          </div>
+          <div
+            class="border border-[color:var(--c-line)] rounded-[var(--r-md)] p-7 text-center lift bg-[color:var(--c-ivory)]">
+            <div class="font-display text-3xl text-[color:var(--c-gold)]">
+              ★
+            </div>
+            <p class="font-display text-lg mt-3">AFAR</p>
+            <p class="text-xs text-[color:var(--c-mute)] mt-1">
+              Travel Vanguard 2024
+            </p>
+          </div>
+          <div
+            class="border border-[color:var(--c-line)] rounded-[var(--r-md)] p-7 text-center lift bg-[color:var(--c-ivory)]">
+            <div class="font-display text-3xl text-[color:var(--c-gold)]">
+              ★
+            </div>
+            <p class="font-display text-lg mt-3">B Corp Certified</p>
+            <p class="text-xs text-[color:var(--c-mute)] mt-1">Since 2022</p>
+          </div>
+        </div>
+
+        <blockquote class="mt-16 max-w-3xl reveal">
+          <p class="font-display text-2xl md:text-3xl lg:text-4xl leading-tight italic">
+            "Wanderly is the closest thing to having a well-connected friend
+            in every city on earth."
+          </p>
+          <footer class="mt-5 text-sm text-black">
+            — The Financial Times, How to Spend It
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ 24. FINAL CTA + CONTACT ============ -->
+    <section id="contact"
+      class="py-24 md:py-32 bg-[color:var(--c-forest)] text-[color:var(--c-ivory)] relative overflow-hidden">
+      <div
+        class="absolute -bottom-24 -left-24 w-[500px] h-[500px] rounded-full bg-[color:var(--c-terra)]/15 blur-3xl pointer-events-none"
+        aria-hidden="true"></div>
+      <div class="container-x grid lg:grid-cols-2 gap-14 relative">
+        <div class="reveal">
+          <p class="ornament mb-5 text-[color:var(--c-ivory)]/60">
+            <span>Start your journey</span>
+          </p>
+          <h2 class="font-display text-5xl md:text-6xl lg:text-7xl balance">
+            Let's plan something <em class="italic">beautiful</em>.
+          </h2>
+          <p class="mt-6 opacity-75 max-w-lg">
+            Tell us a little about the trip you're dreaming of. An editor will
+            reply personally within four working hours.
+          </p>
+
+          <div class="mt-10 grid grid-cols-2 gap-6 max-w-md text-sm">
+            <div>
+              <p class="text-xs uppercase tracking-widest opacity-60">
+                Studio
+              </p>
+              <p class="mt-2">17 Bloomsbury Sq.<br />London WC1A 2PL</p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest opacity-60">
+                Write
+              </p>
+              <a href="mailto:hello@wanderly.co" class="mt-2 block ulink">hello@wanderly.co</a>
+              <a href="tel:+442045770011" class="ulink">+44 20 4577 0011</a>
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="bg-[color:var(--c-ivory)] text-[color:var(--c-ink)] rounded-[var(--r-xl)] p-7 md:p-10 shadow-[var(--shadow-lg)] reveal"
+          onsubmit="
+              event.preventDefault();
+              this.querySelector('.form-ok').classList.remove('hidden');
+              this.reset();
+            " novalidate>
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="field">
+              <input id="f1" type="text" placeholder=" " required /><label for="f1">Your name</label>
+            </div>
+            <div class="field">
+              <input id="f2" type="email" placeholder=" " required /><label for="f2">Email</label>
+            </div>
+            <div class="field">
+              <input id="f3" type="text" placeholder=" " /><label for="f3">Destination</label>
+            </div>
+            <div class="field">
+              <input id="f4" type="text" placeholder=" " onfocus="this.type = 'date'"
+                onblur="if (!this.value) this.type = 'text';" />
+              <label for="f4">Approx. dates</label>
+            </div>
+            <div class="field md:col-span-2">
+              <textarea id="f5" rows="3" placeholder=" "></textarea><label for="f5">Tell us about the trip</label>
+            </div>
+          </div>
+          <label class="mt-5 flex items-start gap-3 text-sm text-[color:var(--c-mute)] cursor-pointer">
+            <input type="checkbox" class="mt-1 accent-[color:var(--c-forest)]" />
+            <span>Happy to receive the Sunday Dispatch newsletter (one email per
+              week, unsubscribe anytime).</span>
+          </label>
+          <button type="submit" class="btn-primary mt-8">
+            Send to an editor
+            <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M7 17L17 7M17 7H9M17 7V15" />
+            </svg>
+          </button>
+          <p class="form-ok hidden mt-4 text-sm text-[color:var(--c-forest)]">
+            ✓ Thank you — we'll be in touch within four hours.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-[color:var(--c-ink)] text-[color:var(--c-ivory)]">
+    <div class="container-x py-20">
+      <div class="grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-4">
+          <div class="flex items-center gap-2">
+            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="18" stroke="#FBF7F0" stroke-width="1.5" />
+              <path d="M8 20 Q20 6 32 20 Q20 34 8 20Z" stroke="#FBF7F0" stroke-width="1.5" fill="none" />
+              <circle cx="20" cy="20" r="2.5" fill="#C65D3B" />
+            </svg>
+            <span class="font-display text-[22px]">Wanderly</span>
+          </div>
+          <p class="mt-5 opacity-70 text-sm max-w-xs">
+            Bespoke travel itineraries, crafted by editors and an AI that's
+            read every guidebook. Est. 2016, London.
+          </p>
+          <div class="mt-6 flex gap-3">
+            <div class="mt-6 flex gap-3">
+              <!-- 1. Instagram -->
+              <a href="#" aria-label="Instagram"
+                class="w-10 h-10 rounded-full border border-white/20 grid place-items-center hover:bg-white hover:text-[color:var(--c-ink)] transition">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+
+              <!-- 2. Pinterest -->
+              <a href="#" aria-label="Pinterest"
+                class="w-10 h-10 rounded-full border border-white/20 grid place-items-center hover:bg-white hover:text-[color:var(--c-ink)] transition">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0" />
+                </svg>
+              </a>
+
+              <!-- 3. YouTube -->
+              <a href="#" aria-label="YouTube"
+                class="w-10 h-10 rounded-full border border-white/20 grid place-items-center hover:bg-white hover:text-[color:var(--c-ink)] transition">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z">
+                  </path>
+                  <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"></polygon>
+                </svg>
+              </a>
+
+              <!-- 4. TikTok -->
+              <a href="#" aria-label="TikTok"
+                class="w-10 h-10 rounded-full border border-white/20 grid place-items-center hover:bg-white hover:text-[color:var(--c-ink)] transition">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
+                </svg>
+              </a>
+
+              <!-- 5. Facebook -->
+              <a href="#" aria-label="Facebook"
+                class="w-10 h-10 rounded-full border border-white/20 grid place-items-center hover:bg-white hover:text-[color:var(--c-ink)] transition">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-xs uppercase tracking-widest opacity-60 mb-4">
+            Explore
+          </p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#destinations" class="ulink">Destinations</a></li>
+            <li><a href="#itineraries" class="ulink">Itineraries</a></li>
+            <li><a href="#experiences" class="ulink">Experiences</a></li>
+            <li><a href="#journal" class="ulink">Journal</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-xs uppercase tracking-widest opacity-60 mb-4">
+            Company
+          </p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="ulink">About</a></li>
+            <li><a href="#experts" class="ulink">Editors</a></li>
+            <li><a href="#" class="ulink">Careers</a></li>
+            <li><a href="#" class="ulink">Press</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-xs uppercase tracking-widest opacity-60 mb-4">
+            Support
+          </p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#contact" class="ulink">Contact</a></li>
+            <li><a href="#" class="ulink">FAQ</a></li>
+            <li><a href="#" class="ulink">Terms</a></li>
+            <li><a href="#" class="ulink">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-xs uppercase tracking-widest opacity-60 mb-4">
+            Offices
+          </p>
+          <ul class="space-y-2 text-sm opacity-80">
+            <li>London</li>
+            <li>New York</li>
+            <li>Kyoto</li>
+            <li>Cape Town</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="mt-16 pt-8 border-t border-white/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs opacity-60">
+        <p>© 2026 Wanderly Ltd. All journeys reserved.</p>
+        <p>Made with care in London · A B Corp certified company</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+     SCRIPTS 
+     ========================================================= -->
+
+     <script src="./scripts/core.js"></script>
+     <script src="./scripts/data.js"></script>
+     <script src="./scripts/modules.js"></script>
+     <script src="./scripts/bootstrap.js"></script>
+
+</body>
+
+</html>
