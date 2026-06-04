@@ -1,0 +1,73 @@
+    /* ==========================================================================
+    DESIGN SYSTEM
+   ========================================================================== */
+    :root {
+      /* Core Color Palette */
+      --c-ivory: #fbf7f0;
+      --c-paper: #f4ede1;
+      --c-cream: #ede3d0;
+      --c-forest: #0e3b2e;
+      --c-forest-2: #1b5544;
+      --c-ink: #17140f;
+      --c-mute: #6b6157;
+      --c-line: rgba(23, 20, 15, 0.12);
+
+      /* Decorative Brand Accents (Original) */
+      --c-terra: #c65d3b;
+      --c-terra-2: #a84828;
+      --c-gold: #b8935a;
+      --c-sage: #8fa68e;
+
+      /* Accessible Text-Safe Colors (WCAG AA Compliant on Ivory Background) */
+      --c-terra-text: #ad4a29;
+      /* 4.5+:1 Contrast Ratio */
+      --c-gold-text: #86632f;
+      /* 4.5+:1 Contrast Ratio */
+      --c-sage-text: #4a6349;
+      /* 4.5+:1 Contrast Ratio */
+
+      /* Fluid Spacing Scale (Adapts dynamically to viewport) */
+      --space-xs: clamp(0.25rem, 0.22rem + 0.1vw, 0.35rem);
+      --space-sm: clamp(0.4rem, 0.35rem + 0.2vw, 0.55rem);
+      --space-md: clamp(0.75rem, 0.68rem + 0.3vw, 0.95rem);
+      --space-lg: clamp(1.2rem, 1.08rem + 0.5vw, 1.5rem);
+      --space-xl: clamp(1.8rem, 1.6rem + 1.0vw, 2.4rem);
+      --space-2xl: clamp(2.8rem, 2.4rem + 2.0vw, 4.0rem);
+
+      /* Fluid Typographic Scale */
+      --text-xs: clamp(0.7rem, 0.68rem + 0.1vw, 0.78rem);
+      --text-sm: clamp(0.8rem, 0.77rem + 0.15vw, 0.9rem);
+      --text-base: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+      --text-md: clamp(1.1rem, 1.05rem + 0.25vw, 1.25rem);
+      --text-lg: clamp(1.3rem, 1.2rem + 0.5vw, 1.6rem);
+      --text-xl: clamp(1.6rem, 1.45rem + 0.75vw, 2.0rem);
+      --text-2xl: clamp(2.0rem, 1.8rem + 1.0vw, 2.6rem);
+      --text-3xl: clamp(2.5rem, 2.2rem + 1.5vw, 3.5rem);
+      --text-4xl: clamp(3.2rem, 2.8rem + 2.0vw, 4.8rem);
+
+      /* Font Weights */
+      --fw-normal: 400;
+      --fw-medium: 500;
+      --fw-semibold: 600;
+      --fw-bold: 700;
+
+      /* Consistent Shadow System */
+      --shadow-sm: 0 1px 2px rgba(14, 59, 46, 0.06);
+      --shadow-md: 0 10px 30px -12px rgba(14, 59, 46, 0.18);
+      --shadow-lg: 0 30px 60px -20px rgba(14, 59, 46, 0.22);
+      --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+      /* Standardized Border Radius System */
+      --r-sm: 6px;
+      --r-md: 14px;
+      --r-lg: 22px;
+      --r-xl: 36px;
+      --r-2xl: 64px;
+
+      /* Performance Transitions and Easing Curve */
+      --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: 0.2s var(--ease);
+      --transition-normal: 0.4s var(--ease);
+      --transition-slow: 0.8s var(--ease-out);
+    }
